@@ -1,0 +1,20 @@
++alias org.eolang.txt.sprintf
++alias org.eolang.io.stdout
+
+[val] > container
+  val > @
+
+[] > loop
+  cage 0 > index
+  seq > @
+    index.write (container 1)
+    stdout
+      sprintf
+        "%s"
+        index
+    index.write (container 2)
+    stdout
+      sprintf
+        "%s"
+        index
+    TRUE
