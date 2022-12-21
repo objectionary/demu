@@ -11,16 +11,7 @@ final class DeMuTest {
 
     @Disabled
     @Test
-    void convertsEoProgramToEoProgramWithoutCage() throws Exception {
-        MatcherAssert.assertThat(
-            new DeMu().apply(new TextOf(new ResourceOf("eo/cage_simple.eo")).asString()),
-            Matchers.equalTo(new TextOf(new ResourceOf("eo/without_cage_simple.eo")).asString())
-        );
-    }
-
-    @Disabled
-    @Test
-    void convertsEoProgramToEoProgramWithCage() throws Exception {
+    void convertsEoProgramToEoProgramWitoutCage() throws Exception {
         MatcherAssert.assertThat(
             new DeMu().apply(new TextOf(new ResourceOf("eo/cage_simple_optimized.xmir")).asString()),
             Matchers.equalTo(new TextOf(new ResourceOf("eo/without_simple_optimized.xmir")).asString())
