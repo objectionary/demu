@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2016-2022 Objectionary.com
+ * Copyright (c) 2022 Objectionary
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,31 @@
  */
 package org.eolang.demu;
 
-import java.util.function.Function;
-
 /**
  * Demu.
  *
  * @since 0.1.0
  */
-final class DeMu implements Function<String, String> {
+final class DeMu {
 
-    public String apply(final String program) {
-        return program;
+    /**
+     * EoLang program as XMIR.
+     */
+    private final String program;
+
+    /**
+     * Ctor.
+     * @param xmir Eolang program
+     */
+    DeMu(final String xmir) {
+        this.program = xmir;
+    }
+
+    /**
+     * Transform EO program to EO program without cage.
+     * @return EO program without cage.
+     */
+    String transform() {
+        return this.program;
     }
 }
