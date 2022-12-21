@@ -33,7 +33,8 @@ import org.junit.jupiter.api.Test;
 /**
  * Test case for {@link DeMu}.
  * @since 0.1.0
- * @todo: #2:90min We have to implement full integration tests for DeMu.
+ * @todo #2:90min We have to implement full integration tests for DeMu. It is convenient to have
+ *  some examples of eo programs, parse them to XMIR and then apply DeMu.
  */
 final class DeMuTest {
 
