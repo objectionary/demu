@@ -33,7 +33,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Test case for {@link DeMu}.
  * @since 0.1.0
- * @todo: We have to implement full integration tests for DeMu.
+ * @todo: #2:90min We have to implement full integration tests for DeMu.
  */
 final class DeMuTest {
 
