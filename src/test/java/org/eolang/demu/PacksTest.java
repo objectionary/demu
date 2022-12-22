@@ -28,6 +28,7 @@ import java.util.Map;
 import org.eolang.jucs.ClasspathSource;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.yaml.snakeyaml.Yaml;
 
@@ -38,6 +39,7 @@ import org.yaml.snakeyaml.Yaml;
  */
 class PacksTest {
 
+    @Disabled
     @ParameterizedTest
     @ClasspathSource(value = "org/eolang/demu/packs/", glob = "**.yaml")
     void transformsPack(final String pack) throws IOException {
