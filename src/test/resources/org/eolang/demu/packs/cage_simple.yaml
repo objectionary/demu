@@ -1,0 +1,44 @@
+xsls:
+  - /org/eolang/demu/transform.xsl
+
+before: |
+  +alias org.eolang.txt.sprintf
+  +alias org.eolang.io.stdout
+
+  [val] > container
+  val > @
+
+  [] > loop
+  cage 0 > index
+  seq > @
+    index.write (container 1)
+    stdout
+      sprintf
+        "%s"
+        index
+    index.write (container 2)
+    stdout
+      sprintf
+        "%s"
+        index
+    TRUE
+after: |
+  +alias org.eolang.txt.sprintf
+  +alias org.eolang.io.stdout
+
+  [val] > container
+  val > @
+
+  [] > loop
+  seq > @
+    container 1 > index_1
+    stdout
+      sprintf
+        "%s"
+        index_1
+    container 2 > index_2
+    stdout
+      sprintf
+        "%s"
+        index_2
+    TRUE
