@@ -23,6 +23,8 @@
  */
 package org.eolang.demu;
 
+import com.jcabi.xml.XML;
+
 /**
  * Demu.
  *
@@ -33,21 +35,21 @@ final class DeMu {
     /**
      * EoLang program as XMIR.
      */
-    private final String program;
+    private final XML xmir;
 
     /**
      * Ctor.
      * @param xmir Eolang program
      */
-    DeMu(final String xmir) {
-        this.program = xmir;
+    DeMu(final XML xmir) {
+        this.xmir = xmir;
     }
 
     /**
      * Transform EO program to EO program without cage.
      * @return EO program without cage.
      */
-    String transform() {
-        return this.program;
+    XML transform() {
+        return this.xmir;
     }
 }
