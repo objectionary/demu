@@ -1,0 +1,39 @@
+xsls:
+  - /org/eolang/demu/transform.xsl
+
+# While code is broken
+before: |
+  +alias org.eolang.txt.sprintf
+  +alias org.eolang.io.stdout
+
+  [] > example
+    cage 0 > index
+    seq > @
+      while.
+        index.lt 10
+        [i]
+          index.write (index.plus 1)
+      stdout
+        sprintf
+          "%s"
+          index
+      TRUE
+
+after: |
+  +alias org.eolang.txt.sprintf
+  +alias org.eolang.io.stdout
+
+  [] > example
+    seq > @
+      example_recursive 0
+      TRUE
+
+  [i] > example_recursive
+    if. > @
+      i.lt 10
+      example_recursive (i.plus 1)
+      stdout
+        sprintf
+          "%s"
+          index
+
