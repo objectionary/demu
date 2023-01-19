@@ -1,0 +1,26 @@
+xsls:
+  - /org/eolang/demu/transform.xsl
+
+before: |
+  +alias org.eolang.hamcrest.assert-that
+
+  [] > rho-of-add-should-not-change
+    cage 0 > f
+    assert-that > @
+      seq
+        f2.write (1.plus 1)
+        TRUE
+      $.equal-to TRUE
+
+after: |
+  +alias org.eolang.hamcrest.assert-that
+
+  [] > rho-of-add-should-not-change
+    generated 1.plus 1
+
+  [e] > generated
+    assert-that > @
+      seq
+        e
+        TRUE
+        $.equal-to TRUE

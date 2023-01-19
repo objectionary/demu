@@ -1,0 +1,32 @@
+xsls:
+  - /org/eolang/demu/transform.xsl
+
+before: |
+  +alias org.eolang.txt.sprintf
+  +alias org.eolang.io.stdout
+
+  [] > example
+    cage 0 > index
+    if. > a
+      1.eq 2
+      index.write 1
+      index.write 2
+    stdout > @
+      sprintf
+        "%s%s"
+        a
+        index
+
+# Transformation of that code seems impossible. before == after.
+after: |
+  [] > example
+    cage 0 > index
+    if. > a
+      1.eq 2
+      index.write 1
+      index.write 2
+    stdout > @
+      sprintf
+        "%s%s"
+        a
+        index
