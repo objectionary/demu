@@ -1,7 +1,7 @@
 xsls:
   - /org/eolang/demu/transform.xsl
 
-# While code is broken
+# While code is broken https://github.com/objectionary/eo/issues/1698
 before: |
   +alias org.eolang.txt.sprintf
   +alias org.eolang.io.stdout

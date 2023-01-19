@@ -1,0 +1,32 @@
+xsls:
+  - /org/eolang/demu/transform.xsl
+
+before: |
+  +alias org.eolang.hamcrest.assert-that
+
+  [] > seq-single-dataization-int-greater-than-test
+    memory 0 > counter
+    assert-that > @
+      seq
+        counter.write
+          counter.plus 1
+        counter
+      $.not
+        $.greater-than 1
+
+after: |
+  +alias org.eolang.hamcrest.assert-that
+
+  [] > seq-single-dataization-int-greater-than-test
+    generated0 0
+
+  [init] > generated0
+    generated1 init.plus 1
+
+  [init] > generated1
+    assert-that > @
+      seq
+        init
+        init
+      $.not
+        $.greater-than 1
